@@ -16,7 +16,7 @@ public class SalathTimeLoader extends AsyncTaskLoader<List<SalathTime>> {
 
 
     public String mUrl;
-    List<SalathTime> salathtime;
+    List<SalathTime> salathTimes;
 
     public SalathTimeLoader(Context context,String url) {
         super(context);
@@ -30,13 +30,13 @@ public class SalathTimeLoader extends AsyncTaskLoader<List<SalathTime>> {
         Log.i("In Salathtime Loader",mUrl);
 
         try {
-            salathtime=  Queryutils.makeHttpRequest(mUrl);
+            salathTimes =  Queryutils.makeHttpRequest(mUrl);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-        return salathtime;
+        return salathTimes;
     }
 
 
